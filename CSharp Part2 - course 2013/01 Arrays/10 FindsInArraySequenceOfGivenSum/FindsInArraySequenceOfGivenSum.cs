@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,48 +6,46 @@ namespace _10_FindsInArraySequenceOfGivenSum
 {
     class FindsInArraySequenceOfGivenSum
     {
-        static void Main(string[] args)
+        static void Main()
         {
             //Write a program that finds in given array of integers a sequence of given sum S (if present). 
+            //Example:	 {4, 3, 1, 4, 2, 5, 8}, S=11  {4, 2, 5}	
 
-            int i = 0, j = 0, k = 0, NumOfSums = 0, sum = 0, start = 0, end = 0;
-            Console.WriteLine("Enter the length of the array N:");
-            string Nstr = Console.ReadLine();
-            int N = int.Parse(Nstr);
-            Console.WriteLine("Enter the sum S:");
-            string Sstr = Console.ReadLine();
-            int S = int.Parse(Sstr);
-            int[] Arr = new int[N];
-            while (i < N)
+            int[] array = { 4, 3, 1, 4, 2, 5, 8 };
+
+            Console.WriteLine("Enter sumS:");
+            int sumS = int.Parse(Console.ReadLine());
+            int currentSum = array[0];
+
+            int startIndex = 0;
+            int endIndex = 0;
+            int CurrSum = 0;
+            for (int i = 0; i < array.Length - 1; i++)
             {
-                Console.WriteLine("Please enter the {0} number of the array", i + 1);
-                string Numstr = Console.ReadLine();
-                Arr[i] = int.Parse(Numstr);
-                i++;
-            }
-            for (i = 0; i < N; i++)
-            {
-                for (j = 0; j < N; j++)
+                CurrSum += array[i];
+                startIndex = i;
+                for (int p = i + 1; p < array.Length; p++)
                 {
-                    if (i + j < N)
+                    CurrSum += array[p];
+                    endIndex = p;
+                    if (CurrSum == sumS)
                     {
-                        sum = sum + Arr[i + j];
-                        if (sum == S)
+                        for (int k = startIndex; k <= endIndex; k++)
                         {
-                            start = i;
-                            end = i + j;
-                            NumOfSums++;
-                            Console.Write("\nS sum elements are: ");
-                            for (k = start; k <= end; k++)
-                            {
-                                Console.Write("{0}; ", Arr[k]);
-                            }
+                            Console.WriteLine(array[k]);
                         }
+                        return;
                     }
                 }
-                sum = 0;
+                CurrSum = 0;
             }
-            Console.Write("\nS sum number is: {0}\n", NumOfSums);
+            Console.WriteLine("The sumS is not present in the array.");
         }
     }
 }
+
+/*
+ОБЯСНЕНИЕ: Тук търсим в масив последователна поредица от числа, чиято сума да е равна на числото S. Правим си три променливи по подобие на 8-ма задача: startIndex, endIndex, CurrSum.
+С два for цикъла обхождаме масива събирайки отляво-надясно елементите му. В момента, в който открием елементи, чиято сума да удовлетворява if условието (а именно - временната CurrSum да бъде равна на sumS)
+влизаме в третия for цикъл, който ни отпечатва индексите (startIndex e нейното начало, а endIndex нейния край) на търсената поредица от числа. Ако не намерим такава поредица от елементи - изписваме, че в масива няма такава поредица.
+*/

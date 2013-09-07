@@ -12,8 +12,8 @@ class ArrayOf20IntsMultipliedBy5
         {
             myArr[i] = i * 5;
         }
-        
-        for (int i = 0; i < 20; i++)
+
+        for (int i = 0; i < myArr.Length; i++)
         {
             Console.WriteLine(myArr[i]);
         }
