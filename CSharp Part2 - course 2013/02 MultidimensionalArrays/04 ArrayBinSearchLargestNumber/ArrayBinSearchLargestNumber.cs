@@ -7,6 +7,14 @@ using System.Threading.Tasks;
  //Write a program, that reads from the console an array of N integers and an integer K, sorts the array and using the method Array.BinSearch() 
 //finds the largest number in the array which is ≤ K. 
 
+/*
+ОБЯСНЕНИЕ: Изключително важна задача, чиято цел е да проучим как работи алгоритъмът BinarySearch - http://en.wikipedia.org/wiki/Binary_search_algorithm.
+Готовият метод в C# е Array.BinarySearch. Характерно за него е, че ако търсеният елемент го няма в масива, то тогава BinarySearch връща отрицателно число (ако върнатата стойност е по-голяма или равна на нула, 
+то търсения елемент съществува в масива). Ако методът върне отрицателно число бихме могли с помощта 
+на побитовия оператор “~” да намерим индекса на първия елемент по-голям от търсения. Правим си три if проверки, за да можем да покрием всички
+евентуални върнати стойности от BinarySearch-а.
+*/
+
 namespace _04_ArrayBinSearchLargestNumber
 {
     class ArrayBinSearchLargestNumber
@@ -41,8 +49,3 @@ namespace _04_ArrayBinSearchLargestNumber
         }
     }
 }
-
-//ОБЯСНЕНИЕ: Изключително важна задача, чиято цел е да проучим как работи методът Array.BinarySearch - http://en.wikipedia.org/wiki/Binary_search_algorithm.
-//Характерно за този метод е, че ако търсеният елемент го няма в масива, то тогава BinarySearch връща отрицателно число (ако върнатата стойност е по-голяма или равна на нула, то търсения елемент съществува в масива). 
-//Ако методът върне отрицателно число бихме могли с помощта на побитовия оператор “~” бихме могли да намерим индекса на първия елемент по-голям от търсения. 
-//Правим си три if проверки, за да можем да покрием всички евентуални върнати стойности от BinarySearch-а.

@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 //Write a program that fills and prints a matrix of size (n, n) as shown below: 
 
+//ОбЯСНЕНИЕ: Разделям четирете поддточки на задачата с if условия, като от конзолата потребителя си избира, коя матрица да се принтира.
+//Кодът за всяка една от тях е изнесена в отделен метод.
+//- fillMatrixA: най-лесната матрица за печатане, като вместо [row, col] използваме [col, row].
+//- fillMatrixB: при втората матрица отново редовете и колоните са разменени при инициализирането. Особеното тук е, че проверяваме дали текущата колона е четна. Ако да - цикълът ни е от 0 до дължината на масива. Ако е нечетна - от дължината до 0.
+//- fillMatrixC: третата матрица я запълваме не по ред и колона, а по диагонали. Първо под главния диагонал и после допълваме над главния.
+//- fillMatrixD: 
 
 namespace _01_FillsAndPrintsMatrix
 {
@@ -13,13 +19,13 @@ namespace _01_FillsAndPrintsMatrix
     {
         static int[,] fillMatrixA(int n)
         {
-            int count = 1;
+            int startCount = 1;
             int[,] matrix = new int[n, n];
             for (int rows = 0; rows < n; rows++)
             {
                 for (int cols = 0; cols < n; cols++)
                 {
-                    matrix[cols, rows] = count++;
+                    matrix[cols, rows] = startCount++;
                 }
             }
             return matrix;
@@ -27,21 +33,21 @@ namespace _01_FillsAndPrintsMatrix
         static int[,] fillMatrixB(int n)
         {
             int[,] matrix = new int[n, n];
-            int count = 1;
+            int startCount = 1;
             for (int rows = 0; rows < n; rows++)
             {
                 if (rows % 2 == 0)
                 {
                     for (int cols = 0; cols < n; cols++)
                     {
-                        matrix[cols, rows] = count++;
+                        matrix[cols, rows] = startCount++;
                     }
                 }
                 else
                 {
                     for (int cols = n - 1; cols >= 0; cols--)
                     {
-                        matrix[cols, rows] = count++;
+                        matrix[cols, rows] = startCount++;
                     }
                 }
             }
@@ -53,7 +59,7 @@ namespace _01_FillsAndPrintsMatrix
             int[,] matrix = new int[n, n];
             int rows = 0;
             int cols = 0;
-            int value = 1;
+            int startCount = 1;
 
             for (int i = n - 1; i >= 0; i--)
             {
@@ -61,7 +67,7 @@ namespace _01_FillsAndPrintsMatrix
                 cols = 0;
                 while (rows < n && cols < n)
                 {
-                    matrix[rows++, cols++] = value++;
+                    matrix[rows++, cols++] = startCount++;
                 }
             }
 
@@ -71,7 +77,7 @@ namespace _01_FillsAndPrintsMatrix
                 cols = 0;
                 while (rows < n && cols < n)
                 {
-                    matrix[cols++, rows++] = value++;
+                    matrix[cols++, rows++] = startCount++;
                 }
             }
             return matrix;
@@ -118,9 +124,8 @@ namespace _01_FillsAndPrintsMatrix
             }
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
-
             Console.WriteLine("Please enter the n number:");
             int n = int.Parse(Console.ReadLine());
 
@@ -151,13 +156,11 @@ namespace _01_FillsAndPrintsMatrix
                 int[,] a = fillMatrixD(n);
                 PrintMatrix(a);
             }
+            else 
+            {
+                Console.WriteLine("Error!");
+            }
         }
     }
 }
 
-//ОбЯСНЕНИЕ: Разделям четирете поддточки на задачата с if условия, като от конзолата потребителя си избира, коя матрица да се принтира.
-//Кодът за всяка една от тях е изнесена в отделен метод.
-//- fillMatrixA: най-лесната матрица за печатане, като вместо [row, col] използваме [col, row].
-//- fillMatrixB: при втората матрица отново редовете и колоните са разменени при инициализирането. Особеното тук е, че проверяваме дали текущата колона е четна. Ако да - цикълът ни е от 0 до дължината на масива. Ако е нечетна - от дължината до 0.
-//- fillMatrixC: третата матрица я запълваме не по ред и колона, а по диагонали. Първо под главния диагонал и после допълваме над главния.
-//- fillMatrixD: 
