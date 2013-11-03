@@ -1,7 +1,7 @@
 ﻿using System;
 
 /*
-10. Declare  two integer variables and assign them with 5 and 10 and after that exchange their values.
+11. Declare  two integer variables and assign them with 5 and 10 and after that exchange their values.
 
 ОБЯСНЕНИЕ: Много важна задача, чиято основна цел е да ни научи как да разменим стойностите на две променливи (в случая int). За по-голяма нагледност и улеснение на примера съм използвал семпли имена на променливите.
 
