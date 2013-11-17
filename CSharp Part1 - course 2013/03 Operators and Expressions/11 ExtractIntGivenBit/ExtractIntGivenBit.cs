@@ -2,9 +2,9 @@
 
 
 /*
-11. Write an expression that extracts from a given integer i the value of a given bit number b. Example: i=5; b=2 -> value=1.
+11. Write an expression that extracts from a given integer "i" the value of a given bit number "b". Example: i=5; b=2 -> value=1.
 
-ОБЯСНЕНИЕ: Почти същата задача като 10-та.
+ОБЯСНЕНИЕ: Почти същата задача като 10-та, пак се използва маска с шифтване.
 
  */
 

@@ -1,10 +1,9 @@
 ﻿using System;
 
-
 /*
-10. Write a boolean expression that returns if the bit at position p (counting from 0) in a given integer number v has value of 1. Example: v=5; p=1 -> false.
+10. Write a boolean expression that returns if the bit at position "p" (counting from 0) in a given integer number "v" has value of 1. Example: v=5; p=1 -> false.
 
-ОБЯСНЕНИЕ: Задачата е подобна на 5-та.
+ОБЯСНЕНИЕ: Задачата е подобна на 5-та и отново се използва маска, която се шифтва.
 
  */
 
