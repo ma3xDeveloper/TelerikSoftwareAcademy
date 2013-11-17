@@ -4,7 +4,8 @@
 /*
 06. Write an expression that checks if given point (x,  y) is within a circle K(O, 5).
 
-ОБЯСНЕНИЕ: За решението на тази задача се налага да се запознаете с Питагоровата теорема (http://en.wikipedia.org/wiki/Pythagorean_theorem) и да си направите сметките.
+ОБЯСНЕНИЕ: В тази задача, под K(O, 5) се разбира окръжност, центъра на която е центъра на координатната система и е с радиус 5. Ще използваме формулата за намиране на точка в окръжност, която е x² + y² < r²
+За да повдигаме на квадрат няма да използваме методът Math.Pow, тъй като той е бавна функция.
 
  */
 
@@ -12,20 +13,15 @@ class GivenPointWithinCircle
 {
     static void Main()
     {
-        decimal pointX = 4.6m;
-        decimal pointY = - 4.3m;
-        decimal centerX = - 1.0m;
-        decimal centerY = 2.5m;
-
-        decimal resultX = (pointX - centerX) * (pointX - centerX);
-        decimal resultY = (pointY - centerY) * (pointY - centerY);
-
-        decimal resultXY = resultX + resultY;
+        Console.WriteLine("Pease enter the X coordinate: ");
+        decimal x = decimal.Parse(Console.ReadLine());
+        Console.WriteLine("Pease enter the Y coordinate: ");
+        decimal y = decimal.Parse(Console.ReadLine());
 
         decimal radius = 5;
+        bool result = x * x + y * y < radius * radius;
 
-        bool isWhitin = resultXY < radius * radius;
-
-        Console.WriteLine(isWhitin);
+        Console.WriteLine();
+        Console.WriteLine(result ? "They are within the circle" : "They are outside the circle");
     }
 }
