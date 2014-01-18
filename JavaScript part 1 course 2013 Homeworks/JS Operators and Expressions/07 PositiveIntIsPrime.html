@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>07 PositiveIntIsPrime</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>07. Write an expression that checks if given positive integer number n (n <= 100) is prime. E.g. 37 is prime.</p>
+    <p>ОБЯСНЕНИЕ: Директно използваме алгоритъма с условията, на които трябва да отговаря едно просто число от C# задачите. В зависимост от това, дали резутата е true или false принтираме един от двата възможни отговоа на конзолата.</p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+      
+        function isPrime (number) {
+        
+            var isPrime = ((number % 2 > 0)
+               && (number % 3 > 0) && (number % 5 >0)
+               && (number % 7 > 0)) || ((number == 2) || (number == 3)
+               || (number == 5) || (number == 7));
+
+            if (isPrime == true) {
+                console.log("The Number " + number + " is prime.");
+            }
+            else {
+                console.log("The Number " + number + " is NOT prime.");
+            }
+        }
+
+        isPrime(2);
+        isPrime(37);
+        isPrime(11);
+        isPrime(8);
+        isPrime(10);
+        isPrime("apple");
+
+    </script>
+</body>
+</html>

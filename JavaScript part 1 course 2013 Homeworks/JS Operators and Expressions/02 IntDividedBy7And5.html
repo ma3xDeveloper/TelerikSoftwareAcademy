@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>02 IntDividedBy7And5</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>02. Write a boolean expression that checks for given integer if it can be divided (without remainder) by 7 and 5 in the same time.</p>
+    <p>ОБЯСНЕНИЕ: За да проверим дали едно число се едли едновременно на 7 и 5 без остатък, условието в if-а ще бъде зададено чрез оператора &&.</p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+
+        function intDivided(number) {
+
+            if (number % 5 == 0 && number % 7 == 0) {
+                console.log(number + " can be divided (without remainder) by 7 and 5 in the same time");
+            }
+            else {
+                console.log(number + " can NOT be divided (without remainder) by 7 and 5 in the same time");
+
+            }
+        }
+
+        intDivided(35);
+        intDivided(5);
+        intDivided(7);
+        intDivided(21);
+        intDivided("apple");
+
+    </script>
+</body>
+</html>

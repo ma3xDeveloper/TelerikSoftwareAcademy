@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>04 IsThirdDigit7</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>04. Write an expression that checks for given integer if its third digit (right-to-left) is 7. E. g. 1732 -> true.</p>
+    <p>ОБЯСНЕНИЕ: За да проверим третата цифра отдясно-наляво дали е 7, първо делим на 100, след това делим с остатък, за да сравним дали това число е равно на 7. Важно е числото, което ще се дели, за да се провери, преди това да се парсне към INT, защото само при този тип, след деление се губят цифрите след десетичната запетая.</p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+        function isThirdDigitSeven(number) {
+
+            var buffer = parseInt(number / 100);
+
+            if (buffer % 10 == 7) {
+                console.log("The third digit (right-to-left) of " + number + " is 7");
+            }
+
+            else {
+                console.log("The third digit (right-to-left) of " + number + " is NOT 7");
+            }
+        }
+
+        isThirdDigitSeven(2584785);
+        isThirdDigitSeven(1732);
+        isThirdDigitSeven(45333);
+        isThirdDigitSeven(712);
+        isThirdDigitSeven(5);
+        isThirdDigitSeven("apple");
+
+    </script>
+</body>
+</html>

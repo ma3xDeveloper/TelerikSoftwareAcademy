@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>06 GivenPointWithinCircle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>06. Write an expression that checks if given print (x,  y) is within a circle K(O, 5).</p>
+    <p>ОБЯСНЕНИЕ:  В тази задача, под K(O, 5) се разбира окръжност, центъра на която е центъра на координатната система и е с радиус 5. Ще използваме формулата за намиране на точка в окръжност, която е x² + y² < r²</p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+
+        function isPointWithinCircle(x, y) {
+
+            var radius = 5;
+
+            if ((x * x + y * y) < radius * radius) {
+                console.log("The given point (" + x + "," + y + ") is within the circle.");
+            }
+            else {
+                console.log("The given point (" + x + "," + y + ") is OUTSIDE thr circle!");
+            }
+
+        }
+
+        isPointWithinCircle(4, 5);
+        isPointWithinCircle(1, 2);
+        isPointWithinCircle("apple", "milk");
+
+    </script>
+</body>
+</html>

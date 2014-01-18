@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>05 IfBit3IsOneOrZero</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>05. Write a boolean expression for finding if the bit 3 (counting from 0) of a given integer is 1 or 0.</p>
+    <p>ОБЯСНЕНИЕ: Правим си маска със стойност 1, която шифтваме 3 позиции наляво. В result записваме резултата от израза с побитовия оператор &. След това шифтваме обратно резултата с 3 позиции надясно и в зависимост от това, дали неговата стойност е 1 или 0, принтираме един от двата възможни резултата на конзолата. </p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+
+        function isBitOneOrZero(number) {
+
+            var mask = 1 << 3;
+            var result = mask & number;
+            result = result >> 3;
+
+            if (result == 1) {
+                console.log("The bit 3 of a given number " + number + " is 1");
+            }
+
+            else {
+                console.log("The bit 3 of a given number " + number + " is 0");
+            }
+        }
+
+        isBitOneOrZero(245);
+        isBitOneOrZero(1832);
+        isBitOneOrZero(433);
+        isBitOneOrZero(72);
+        isBitOneOrZero(4);
+        isBitOneOrZero("apple");
+
+    </script>
+</body>
+</html>

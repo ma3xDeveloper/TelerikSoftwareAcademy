@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>01 IntegerIsOddOrEven</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>01. Write an expression that checks if given integer is odd or even.</p>
+    <p>ОБЯСНЕНИЕ: За да проверим дали дадено число е четно или нечетно си създаваме обикновенна функция за това. Когато метода се извика, ако числото се дели на 2 без остатък е четно, ако ли не - значи е нечетно. Между другото интересното е, че когато подадем стринг към JS функцията, не получаваме NaN, както евентуално бихте очаквали, а го отчита като odd.</p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+
+        function oddOrEven(number) {
+
+            if (number % 2 == 0) {
+                console.log(number + " is even");
+            }
+            else {
+                console.log(number + " is odd");
+            }
+        }
+
+        oddOrEven(3);
+        oddOrEven(4);
+        oddOrEven("apple");
+        oddOrEven("444");
+
+    </script>
+</body>
+</html>
