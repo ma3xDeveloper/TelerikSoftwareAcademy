@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>02 NumbersDividetBy3And7</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>02. Write a script that prints all the numbers from 1 to N, that are not divisible by 3 and 7 at the same time.</p>
+    <p>ОБЯСНЕНИЕ: Задача като предишната, само че във for цикъла слагаме едно if условие, което да маха числата, които се делят на 3 и 7 едновременно. Ако това е вярно операторът continue ни връща отново към условието на for цикъла и прескача по този начин else условието.</p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+
+        var n = 21; //21 is divisible by 3 and 7 at the same time
+        console.log("N = " + n)
+        console.log(" ")
+
+        for (var i = 1; i <= n; i += 1) {
+            if (i % 3 == 0 && i % 7 == 0) {
+                continue;
+            }
+            else {
+                console.log(i);
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>03 NMinAndMaxInSequence</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>03. Write a script that finds the max and min number from a sequence of numbers.</p>
+    <p>ОБЯСНЕНИЕ: Поредицата от числа, от които трябва да намерим най-малкото и най-голямото, я записваме в масив. Идеята е да сортираме масива във възходящ ред, след което 
+        да достъпим чрез първия и последния му индекс съответно най-малкото число и най-голямото. Интересното при JS обаче е, че сортиращия метод .sort() на масивите, сортира елементите вътре в него по азбучен ред. 
+        Т.е. ако в масива имаме числата [33, 3, 7] нормално е да очаквате след сортирането те да се подредят в реда [3, 7, 33]... Е да ама не - след използването само на arr.sort() подредбата им ще бъде [3, 33, 7]. 
+        За да накарате .sort() да сортира правилно числа, трябва да музададете като параметър някаква сортираща функция, чрез която да се предефинират правилата за сотртиране, така че те да са приложими адекватно за числа.
+    </p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+
+        function sortNumber(a, b) { //The compare function defines sort rules for numbers
+            return a - b;
+        }
+
+        var arrSequence = [3, 1, 2, 6, 7, 33, 55, -3, 0];
+        console.log(arrSequence);
+        console.log(arrSequence.sort(sortNumber)); //sorting the array
+
+        var min = arrSequence[0];
+        var max = arrSequence[arrSequence.length - 1];
+
+        console.log("Min = " + min);
+        console.log("Max = " + max);
+
+    </script>
+</body>
+</html>
