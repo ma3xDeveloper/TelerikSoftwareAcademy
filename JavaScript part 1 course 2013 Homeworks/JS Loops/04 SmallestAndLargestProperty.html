@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>04 SmallestAndLargestProperty</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>04. Write a script that finds the lexicographically smallest and largest property in document, window and navigator objects.</p>
+    <p>ОБЯСНЕНИЕ: В тази задача, трябва да напишем скрипт, който да намира най-малкото и най-голямото лексикографски property в обектите document, window и navigator. Ще си послужим с  for-in цикъла, който е идеален за обхождане на елементите в колекции, било то масиви или обекти, в които той обхожда пропъртитата им. Създаваме си функция, която приема като параметър object-a, който ще обхождаме (document, window или navigator). Създаваме си променливи с минимална и максимална лексикографска стойност, пускамe for-in цикъла и намираме най-малкото и най-голямото лексикографски property в обектите.</p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+		function smallestAndLargestProperty(obj) {
+	        var min = "z";
+	        var max = "a";
+
+	        for (var prop in obj) {
+
+	            if (prop > max) {
+	                max = prop;
+	            }
+
+	            if (prop < min) {
+	                min = prop;
+	            }
+	        }
+
+	        console.log("Object: " + obj);
+	        console.log("Min property: " + min);
+	        console.log("Max property: " + max);
+    	}
+
+	    smallestAndLargestProperty(document);
+	    smallestAndLargestProperty(window);
+	    smallestAndLargestProperty(navigator);
+    </script>
+</body>
+</html>

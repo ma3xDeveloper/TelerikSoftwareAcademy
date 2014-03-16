@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>07 GreatestOfFiveVariables</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>07. Write a script that finds the greatest of given 5 variables.</p>
+    <p>ОБЯСНЕНИЕ: Ако съберем 5-те числа в масив и го обходим с един for цикъл, намирането на най-голямото число става доста по-лесно, отколкото чрез писането на дълги if-else условия.</p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+      	function greatestOfFiveVariables(arr) {
+
+			var maxVar = arr[0];
+
+			for (var i = 1; i < arr.length; i++) {
+				if(arr[i] > maxVar) {
+				    maxVar = arr[i]
+				}
+			}
+
+			console.log("The max variable is: " + maxVar)
+		}
+
+		var arr = [52, 6, "apple", 0, -7];
+		greatestOfFiveVariables(arr);
+    </script>
+</body>
+</html>

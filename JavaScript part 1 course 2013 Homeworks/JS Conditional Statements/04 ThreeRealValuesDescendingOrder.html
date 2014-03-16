@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>04 ThreeRealValuesDescendingOrder</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>04. Sort 3 real values in descending order using nested if statements.</p>
+    <p>ОБЯСНЕНИЕ: Алгоритъмът за решение е подобен на трета задача, само че вложените if условия са малко по-дълги.</p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+      function threeValuesDescendingOrder(first, second, third) {
+
+            var a = parseInt(first);
+            var b = parseInt(second);
+            var c = parseInt(third);
+
+			if (a > b)
+        	{
+	            if (a > c)
+	            {
+	                console.log(a);
+	                
+	                if (b > c)
+	                {
+	                    console.log(b);
+	                    console.log(c);
+	                }
+	                else if (c > b)
+	                {
+	                    console.log(c);
+	                    console.log(b);
+	            	}
+	      		}
+       		}
+
+	        else if (b > c)
+	        {
+	            if (b > a)
+	            {
+	                console.log(b);
+
+	                if (a > c)
+	                {
+	                    console.log(a);
+	                    console.log(c);
+	                }
+	                else if (c > a)
+	                {
+	                    console.log(c);
+	                    console.log(a);
+	                }
+	            }
+	        }
+
+	        else if (c > a)
+	        {
+	            if (c > b)
+	            {
+	                console.log(c);
+
+	                if (a > b)
+	                {
+	                    console.log(a);
+	                    console.log(b);
+	                }
+	                else if (b > a)
+	                {
+	                    console.log(b);
+	                    console.log(a);
+	                }
+	            }
+	        }
+	    }
+
+		threeValuesDescendingOrder(-12, 5, 1);
+    </script>
+</body>
+</html>

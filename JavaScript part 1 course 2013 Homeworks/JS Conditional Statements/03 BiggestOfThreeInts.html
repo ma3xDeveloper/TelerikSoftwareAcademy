@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>03 BiggestOfThreeInts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>03. Write a program that finds the biggest of three integers using nested if statements.</p>
+    <p>ОБЯСНЕНИЕ: Имаме три случая - "а" да е най-голямото число, "b" да най-голямото или "c" да е най-голямото. При първия, ако числото "а" е по-голямо от "b" се отправяме към вложеното if условие, при което ако "а" е и по-голямо и от "с", това ще рече че именно "а" е най-голямото число от трите и изписваме това на конзолата. Ако "а" не най-голямото се отпавяме към втория и третия случай.
+ </p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+      	function biggestOfThreeInts(first, second, third) {
+
+            var a = parseInt(first);
+            var b = parseInt(second);
+            var c = parseInt(third);
+
+			if (a > b){
+
+		       	if (a > c)
+		            {
+		                console.log("The biggest number is " + a);
+		            }
+		    }
+
+	         if (b > a){
+
+	            if (b > c)
+	            {
+	                console.log("The biggest number is " + b);
+	            }
+	        }
+	         if (c > a){
+
+	            if (c > b)
+	            {
+	                console.log("The biggest number is " + c);
+	            }
+        	}
+
+		}
+
+		biggestOfThreeInts(-12, 5, 0);
+
+    </script>
+</body>
+</html>

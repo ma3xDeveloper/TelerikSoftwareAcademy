@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>05 EnglishDigit</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>05. Write script that asks for a digit and depending on the input shows the name of that digit (in English) using a switch statement.</p>
+    <p>ОБЯСНЕНИЕ: Задачата се решава чрез обикновен switch-case</p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+      	function showDigitInEnglish(number) {
+
+			var number;
+
+			switch (number) {
+			case 1: digit = "One"; break;
+			case 2: digit = "Two"; break;
+			case 3: digit = "Three"; break;
+			case 4: digit = "Four"; break;
+			case 5: digit = "Five"; break;
+			case 6: digit = "Six"; break;
+			case 7: digit = "Seven"; break;
+			case 8: digit = "Eight"; break;
+			case 9: digit = "Nine"; break;
+			case 0: digit = "Zero"; break;
+			default:
+			digit = "Enter a digit betwean 0 and 9"; break;
+			}
+				console.log(digit);
+		}
+
+		showDigitInEnglish(3);
+
+    </script>
+</body>
+</html>
