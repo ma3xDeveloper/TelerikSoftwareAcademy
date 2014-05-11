@@ -12,30 +12,31 @@
     <p>The result is printed on the JS console...</p>
 
     <script>
-		function twoIntsExchangeValues(firstNumber, secondNumber) {
-		
-			var firstNumber;
-			var secondNumber;
-			var temp;
-			
-			if (firstNumber > secondNumber) {
-			
-				temp = firstNumber;
-				firstNumber = secondNumber;
-				secondNumber = temp;
-				
-				console.log("Exchanged values!!!!!!!")
-				console.log("First number: " + firstNumber);
-				console.log("Second number: " + secondNumber);
-			}
+        function twoIntsExchangeValues(firstNumber, secondNumber) {
+            console.log("First number: " + firstNumber); //printing values
+            console.log("Second number: " + secondNumber);
+            console.log(" ");
+            var temp;
 
-			else {
-				console.log("First number: " + firstNumber);
-				console.log("Second number: " + secondNumber);
-			}
-		}
+            if (firstNumber > secondNumber) {
 
-		twoIntsExchangeValues(5, 4);
+                temp = firstNumber;
+                firstNumber = secondNumber;
+                secondNumber = temp;
+
+                console.log("Exchanged values!!!!!!!!!!") //printing Exchanged values
+                console.log("First number: " + firstNumber);
+                console.log("Second number: " + secondNumber);
+            }
+
+            else {
+                console.log("NO exchanged values:") //printing values
+                console.log("First number: " + firstNumber);
+                console.log("Second number: " + secondNumber);
+            }
+        }
+
+        twoIntsExchangeValues(5, 4);
     </script>
 </body>
 </html>
