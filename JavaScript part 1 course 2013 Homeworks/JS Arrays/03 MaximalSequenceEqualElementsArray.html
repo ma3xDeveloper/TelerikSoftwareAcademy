@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>03 MaximalSequenceEqualElementsArray</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>03. Write a script that finds the maximal sequence of equal elements in an array. Example: {2, 1, 1, 2, 3, 3, 2, 2, 2, 1} ->> {2, 2, 2}.</p>
+    <p>
+        ОБЯСНЕНИЕ: Алгоритъмът и обясненията са същите като от C# домашното. 
+        Накрая когато принтираме съобщението "The longest sequence is of elements is ", увеличаваме променливата longestSequence с едно, 
+        тъй като в хода на проверката с променливата counter не сме добавили последното число от най-дългата поредица.
+    </p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+
+        var arr = [2, 1, 1, 2, 3, 3, 2, 2, 2, 1];
+
+        var counter = 0;
+        var longestSequence = 0;
+        var value = 0;
+
+        for (var i = 0; i < arr.length - 1; i += 1) {
+            if (arr[i] == arr[i + 1]) {
+                counter++;
+                if (longestSequence < counter) {
+                    longestSequence = counter;
+                    value = arr[i];
+                }
+            }
+            else {
+                counter = 0;
+            }
+        }
+        if (longestSequence == 0) {
+            console.log("There is no sequence of elements");
+        }
+        else {
+            console.log("The longest sequence is of elements is " + (longestSequence + 1) + " (by number " + value + ")");
+        }
+
+
+    </script>
+</body>
+</html>

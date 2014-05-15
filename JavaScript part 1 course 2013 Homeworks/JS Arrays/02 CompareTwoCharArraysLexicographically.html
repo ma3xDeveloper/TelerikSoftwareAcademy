@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>02 CompareTwoCharArraysLexicographically</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>02. Write a script that compares two char arrays lexicographically (letter by letter).</p>
+    <p>
+        ОБЯСНЕНИЕ: За да решим тази задача първо нека уточним какво се има в предвид под лексикографско сравнение на чаровете в масивите. 
+        Ето какво пише в учебника "Въведение в програмирането" като разяснение към тази задача: 
+        "При лексикографската наредба символите се сравняват един по един като се започва от най-левия. 
+        При несъвпадащи символи по-рано е масивът, чийто текущ символ е по-рано в азбуката. При съвпадение се продължава със следващия символ вдясно. 
+        Ако се стигне до края на единия масив, по-краткият е лексикографски по-рано. Ако всички съответни символи от двата масива съвпаднат, 
+        то масивите са еднакви и никой о тях не е по-рано в лексикографската наредба." 
+        При C# тази задача си е бая занимавка, но тук в JavaScript решението я е много лесно тъй като, ако просто сравним "abc" == "abc" ще получим true. 
+        Ако сравним "abc" < "abc" или "abc" > "abc" получаваме false. Но ако сравним "abc" < "akl" ще получим true!!! Т.е. стринга "abc" лексикографски е по-напред/по-малък е от "akl". 
+        Или казано с други думи, JavaScript има способността автоматично да сравнява лексикографски чаровете. 
+    </p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+
+        var arr1 = "abc"; //strings are arrays
+        var arr2 = "akl";
+
+        if (arr1 > arr2) {
+            console.log("arr2 is lexicographically firs");
+        }
+
+        else if (arr1 < arr2) {
+            console.log("arr1 is lexicographically firs");
+        }
+
+        else {
+            console.log("arr1 and arr2 are lexicographically equal");
+        }
+
+    </script>
+</body>
+</html>

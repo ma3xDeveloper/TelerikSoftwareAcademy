@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>01 ArrayOf20IntsMultipliedBy5</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>01. Write a script that allocates array of 20 integers and initializes each element by its index multiplied by 5. Print the obtained array on the console.</p>
+    <p>ОБЯСНЕНИЕ: Задачата е същата като от C# курса, ако решите да преизползвате кода си внимавайте да смените myArr.Length на myArr.lengt... 
+        На пръв поглед няма разлика, но пропъртито "lengt" за достъпване дължината на масивите в JavaScript се изписва с малко "l" (както и всички пропъртита в JS). 
+        Ако не го смените, кодът ви няма да работите и ще се чудите защо, тъй като JS кода не гърми и не хвърля ексепшъни по време на писане и компилиране на кода. </p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+
+        var myArr = new Array(20);
+
+        for (var i = 0; i < myArr.length; i += 1) {
+            myArr[i] = i * 5;
+        }
+
+        for (var i = 0; i < myArr.length; i += 1) {
+            console.log(myArr[i]);
+        }
+
+    </script>
+</body>
+</html>

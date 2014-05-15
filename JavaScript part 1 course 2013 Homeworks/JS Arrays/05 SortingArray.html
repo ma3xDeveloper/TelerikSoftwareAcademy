@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>05 SortingArray</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>
+        05. Sorting an array means to arrange its elements in increasing order. Write a script to sort an array. 
+        Use the "selection sort" algorithm: Find the smallest element, move it at the first position, find the smallest from the rest, move it at the second position, etc.
+        Hint: Use a second array
+    </p>
+    <p>ОБЯСНЕНИЕ: Идеята тук е да не използваме готовите методи за сортиране, а сами да си разпишем алгоритъма. Инициализираме си масив с несортирани стойности и го принтираме.
+        След това пускаме два форцикъла и сравняваме елементите един по един, когато намерим такъв който е най-малък от останалите го местим на предна позиция и продължаваме проверките за останалите елеминти.
+    </p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+
+        var myArray = [12, 5, 90, 35, 358];
+        var temp = "";
+
+        for (var i in myArray) {
+            temp += myArray[i] + " ";
+        }
+
+        console.log(temp);
+
+        for (var i = 0; i < myArray.length - 1; i++) {
+            var elementMin = i;
+            for (var p = i + 1; p < myArray.length; p++) {
+                if (myArray[p] < myArray[elementMin]) {
+                    elementMin = p;
+                }
+            }
+            if (elementMin != i) {
+                var temp = 0;
+                temp = myArray[i];
+                myArray[i] = myArray[elementMin];
+                myArray[elementMin] = temp;
+            }
+        }
+       
+        temp = "";
+        for (var i in myArray) {
+            temp += myArray[i] + " ";
+        }
+
+        console.log(temp);
+
+    </script>
+</body>
+</html>

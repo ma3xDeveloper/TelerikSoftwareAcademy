@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>07 FindsIndexInSortedArrayUsingBinarySearch.html</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>07. Write a program that finds the index of given element in a sorted myArray of integers by using the binary search algorithm (find it in Wikipedia)</p>
+    <p>ОБЯСНЕНИЕ: Бинарното търсене е много полезен алгоритъм, когато трябва да се търси елемент в много големи масиви. За да работи много е важно да се отбележи, че масивът трябва да бъде сортиран!
+        Неговата бързина на търсене се изразява в това, че той започва търсенето си, не от началото на масива, а от неговата среда. В зависимост от това дали елемента е равен на средния елемент, по-малък е или по голям, 
+        се определя в каква посока ще продължи търсенето (наляво или надясно в масива), ако не сме големи късметлии да се окаже, че търсения елемент е точно средния и сме го нацелили от раз. 
+        Объркващо звучи, затова може да прегледате това разяснително видео тук - https://www.youtube.com/watch?v=j5uXyPJ0Pew 
+        Алгоритъмът е сравнително лесен, само го нагаждаме до особеностите на JS. За да накараме .sort() да сортира правилно числата (не лексикографски, както е по подразбиране), трябва да му зададете като параметър някаква сортираща функция, 
+        чрез която да се предефинират правилата за сотртиране, така че те да са приложими адекватно за числа.
+        Също така е важно да преди да получим стойността на променливата iMidpoint, преди това да сме парснали към INT, за да можем получения резултат след делението да е целочислен.
+        Прието е след изпълнение на binarySearch-а, функцията да върне -1, ако търсения елемент няма позиция вътре в масива.
+        
+    </p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+      
+
+        function sortNumber(a, b) { //The compare function defines sort rules for numbers
+            return a - b;
+        }
+
+        function binarySearch(myArray, searchedElement) {
+
+            myArray.sort(sortNumber);
+            var iMax = myArray.length - 1;
+            var iMin = 0;
+            while (iMax >= iMin)
+            {
+                var iMidpoint = parseInt((iMin + iMax) / 2); // parsing to secure INT num after division, not float
+                if (myArray[iMidpoint] < searchedElement)
+                {
+                    iMin = iMidpoint + 1;
+                }
+                else if (myArray[iMidpoint] > searchedElement)
+                {
+                    iMax = iMidpoint - 1;
+                }
+                else
+                {
+                    return iMidpoint;
+                }
+            }
+            return -1;
+        }
+
+        var myArray = [ 4, 7, 4, 6, 2, 7, 5, 12, 22, 13, ];
+
+        console.log(binarySearch(myArray, 7));
+
+    </script>
+</body>
+</html>

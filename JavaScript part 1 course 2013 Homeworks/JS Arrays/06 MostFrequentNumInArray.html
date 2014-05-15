@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>06 MostFrequentNumInArray</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>06. Write a program that finds the most frequent number in an array. Example: {4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3} ->> 4 (5 times)</p>
+    <p>ОБЯСНЕНИЕ: Алгоритъмът е същия като от C# задачата - първо си сортираме (препоръчително е да си разпишете свой алгоритъм, не да ползвате готовия) масива,
+        после вървим по елементите му в търсене на най-голямото повторение.
+    </p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+
+        var array = [15, 7, 3, 6, 3, 2];
+
+        for (var i = 0; i < array.length - 1; i++)
+        {
+            //sortiin the array
+            for (var j = i + 1; j < array.length; j++)
+            {
+                if (array[i] >= array[j])
+                {
+                    var a = array[i];
+                    array[i] = array[j];
+                    array[j] = a;
+                }
+            }
+        }
+
+        var counter = 0;
+        var bigCounter = 0;
+        var whatNum = 0;
+        for (var i = 0; i < array.length - 1; i++)
+        {
+            if (array[i] == array[i + 1])
+            {
+                counter++;
+                if (bigCounter <= counter)
+                {
+                    bigCounter = counter;
+                    whatNum = array[i];
+                }
+            }
+            else
+            {
+                counter = 0;
+            }
+        }
+
+        console.log("We have " + (bigCounter + 1) + " members of the number " + whatNum + " in the array");
+
+    </script>
+</body>
+</html>

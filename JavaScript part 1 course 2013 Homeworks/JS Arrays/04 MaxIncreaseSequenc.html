@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>04 MaxIncreaseSequence</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <p>04. Write a script that finds the maximal increasing sequence in an array. Example: {3, 2, 3, 4, 2, 2, 4} ->> {2, 3, 4}.</p>
+    <p>ОБЯСНЕНИЕ: Алгоритъмът е аналогичен на този от C#.</p>
+    <br />
+    <p>The result is printed on the JS console...</p>
+
+    <script>
+
+        var array = [8, 2, 3, 4, 5, 1];
+
+        var maxSequence = 0;
+        var sequence = 1;
+        var sequenceNumbers = "";
+        var maxSequenceNumbers = "";
+
+        for (var i = 0; i < array.length - 1; i++) {
+            if (array[i] < array[i + 1]) {
+                sequence++;
+                sequenceNumbers += array[i] + " ";
+            }
+
+            else {
+                if (maxSequence < sequence) {
+                    maxSequence = sequence;
+                    sequenceNumbers += array[i] + " ";
+                    maxSequenceNumbers = sequenceNumbers;
+                }
+                sequence = 1;
+                sequenceNumbers = "";
+            }
+        }
+
+        if (maxSequence < sequence) {
+            sequenceNumbers += array[array.length - 1];
+            maxSequenceNumbers = sequenceNumbers;
+        }
+
+        console.log("The maximal increasing sequence in an array is: " + maxSequenceNumbers);
+
+    </script>
+</body>
+</html>
